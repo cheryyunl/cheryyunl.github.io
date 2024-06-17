@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Generalizable Policy Network Generator with Behavior-Prompted Diffusion">
+  <meta name="keywords" content="Make-An-Agent, diffusion, policy network">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make-An-Agent: A Generalizable Policy Network Generator with Behavior-Prompted Diffusion</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://cheryyunl.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://ace-rl.github.io/">
+            ACE (ICML 2024 Oral)
+          </a>
+          <a class="navbar-item" href="https://drm-rl.github.io/">
+            DrM (ICLR 2024 Spotlight)
+          </a>
+          <a class="navbar-item" href="https://premiertaco.github.io/">
+            Premier-TACO (ICML 2024)
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title" style="color:rgba(74, 77, 163, 0.797)">Make-An-Agent</h1>
+          <h2 class="title is-2 publication-title">A Generalizable Policy Network Generator with Behavior-Prompted Diffusion</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://cheryyunl.github.io/">Yongyuan Liang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=HGTHVUgAAAAJ&hl">Tingqiang Xu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://hukz18.github.io/">Kaizhe Hu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://x.com/LuccaChiang">Guangqi Jiang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://furong-huang.com/">Furong Huang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://hxu.rocks/">Huazhe Xu</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Maryland, College Park</span>
+            <span class="author-block"><sup>2</sup>Tsinghua University, IIIS</span>
+            <span class="author-block"><sup>3</sup>UC San Diego</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/cheryyunl/Make-An-Agent"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/cheryyunl/Make-An-Agent"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-database"></i>
+                  </span>
+                  <span>Models & Dataset</span>
+                  </a>
+                </span>
+              <span class="link-block">
+                <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Twitter</span>
+                  </a>
+                </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <strong>Make-An-Agent</strong> synthesizes policy network parameters using agents' trajectories as prompts. <br>
+        <b style="color:rgba(74, 77, 163, 0.797)">Train once, use everywhere.</b>
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/intro.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><b style="color:rgba(74, 77, 163, 0.797)">Abstract</b></h2>
+        <div class="content has-text-justified">
+          <p>
+          Can we generate a control policy for an agent using just one demonstration of desired behaviors as a prompt, as effortlessly as creating an image from a textual description?
+          In this paper, we present <strong>Make-An-Agent</strong>, a novel policy parameter generator that leverages the power of conditional diffusion models for behavior-to-policy generation. 
+          </p>
+          <p>
+          Guided by behavior embeddings that encode trajectory information, our policy generator synthesizes latent parameter representations, which can then be decoded into policy networks. 
+          Trained on policy network checkpoints and their corresponding trajectories, our generation model demonstrates remarkable versatility and scalability on multiple tasks and has a strong generalization ability on unseen tasks to output well-performed policies with only few-shot demonstrations as inputs. We showcase its efficacy and efficiency on various domains and tasks, including varying objectives, behaviors, and even across different robot manipulators. Beyond simulation, we directly deploy policies generated by <strong>Make-An-Agent</strong> onto real-world robots on locomotion tasks. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <hr style="margin-top: 1em;">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <br>
+        <h3 class="title is-4"><b style="color:rgba(74, 77, 163, 0.797)">Effectiveness, Versatility, Generalizability</b></h3>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Make-An-Agent</strong> can generate optimal policies for a wide variety of tasks with few-shot trajectories as conditional inputs.
+          </p>
+          <div class="content has-text-justified">
+          <img src="static/images/seen.gif" />
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>Make-An-Agent</strong> demonstrates strong generalizability, synthesizing well-performed policies for unseen tasks and unseen robots.
+          </p>
+          <div class="content has-text-justified">
+          <img src="static/images/unseen.gif" />
+          <img src="static/images/legend.png"  style="margin-top: -1em"/>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <h4 class="title is-5"><b style="color:rgba(74, 77, 163, 0.797)">Benchmark visualization</b> of <strong>Make-An-Agent</strong> </h4>
+          </p>
+          <div class="content has-text-justified">
+            <div class="content-video" style="margin-bottom: 32px">
+              <p>
+                Multi-task training on MetaWorld and Robosuite: 13 seen tasks
+              </p>
+              <div class="content-video-container">
+                <img src="static/images/seen/door.gif" width="12%">
+                <img src="static/images/seen/button-press.gif" width="12%">
+                <img src="static/images/seen/dial-turn.gif" width="12%">
+                <img src="static/images/seen/door-open.gif" width="12%">
+                <img src="static/images/seen/lift-panda.gif" width="12%">
+                <img src="static/images/seen/plate-slide.gif" width="12%">
+                <img src="static/images/seen/drawer-open.gif" width="12%">
+                <img src="static/images/seen/window-open.gif" width="12%">
+              </div>
+              <p>Unseen task/robot generalization: 11 tasks</p>
+              <div class="content-video-container">
+                <img src="static/images/unseen/coffee-button.gif" width="12%">
+                <img src="static/images/unseen/window-close.gif" width="12%">
+                <img src="static/images/unseen/lift-sawyer.gif" width="12%">
+                <img src="static/images/unseen/faucet-open.gif" width="12%">
+                <img src="static/images/unseen/reach-wall.gif" width="12%">
+                <img src="static/images/unseen/door-sawyer.gif" width="12%">
+                <img src="static/images/unseen/handle-press-side.gif" width="12%">
+                <img src="static/images/unseen/door-lock.gif" width="12%">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <h4 class="title is-5"><b style="color:rgba(74, 77, 163, 0.797)">Real-world deployment</b> </h4>
+          </p>
+          <div class="content has-text-justified">
+            <div class="content-video" style="margin-bottom: 32px">
+              <p>
+                Synthesizing policy networks using trajectories from IsaacGym simulator and deploying in real-world locomotion tasks.
+              </p>
+              <br>
+              <div class="columns is-vcentered interpolation-panel">
+                <div class="column  has-text-centered">
+                  <video autoplay controls muted loop playsinline width="90%">
+                    <source src="static/videos/flower.mp4" type="video/mp4">
+                  </video>
+                  <p>Avoid stepping on a bouquet while moving across a mat.</p>
+
+                </div>
+                <div class="column  has-text-centered">
+                  <video autoplay controls muted loop playsinline width="90%">
+                    <source src="static/videos/goal.mp4" type="video/mp4">
+                  </video>
+                  <p>Navigating to circumvent the goal and ball swiftly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <hr style="margin-top: 1em;">
+          <h3 class="title is-4"><b style="color:rgba(74, 77, 163, 0.797)">Methodology</b></h3>
+          <div class="content has-text-justified">
+          (a) A contrastive behavior embedding to process trajectory data. (b) An autoencoder to encode and decode policy network parameters. 
+          (c) A policy network generator using a conditional latent diffusion model as the backbone. </div>
+          <video id="method" autoplay muted loop playsinline height="60%">
+            <source src="./static/videos/method.mp4"
+                    type="video/mp4">
+          </video>
+          <hr style="margin-top: 1em;">
+          <h4 class="title is-4"><b style="color:rgba(74, 77, 163, 0.797)">Policy synthesis, not memorizing</b></h4>
+          <div class="content has-text-justified">
+          Trajectories as conditional inputs v.s. Trajectories deployed by synthesized policies from <strong>Make-An-Agent</strong>.<br>
+          <strong>Make-An-Agent</strong> generates diverse and efficient policies.
+          </div>
+          <div class="content-video-container">
+            <img src="static/images/traj/door-lock.gif" width="23%">
+            <img src="static/images/traj/faucet-open.gif" width="23%">
+            <img src="static/images/traj/handle-press-side.gif" width="23%">
+            <img src="static/images/traj/window-close.gif" width="23%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <a style="color:hsla(247, 58%, 62%, 0.862)" href="#top"><i class="fa fa-arrow-up"></i><br/>Return to top</a>
+          <p>
+            Website from <a style="color:hsla(247, 58%, 62%, 0.862)" href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> under <a style="color:hsla(247, 61%, 57%, 0.862)"
+            href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+            International</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
