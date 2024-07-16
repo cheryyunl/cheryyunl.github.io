@@ -135,10 +135,6 @@ name {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
-span.highlight {
-  background-color: #ffffd0;
-}
-
 .side-image{
   /* margin: auto;
   display: block; */
@@ -148,3 +144,8 @@ body{
   padding-left:10px;
   padding-right:10px;
 }
+
+span.highlight {
+  background-color: #f8e6f8;
+}
+

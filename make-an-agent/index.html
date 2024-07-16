@@ -96,13 +96,13 @@
               <a href="https://hukz18.github.io/">Kaizhe Hu</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://x.com/LuccaChiang">Guangqi Jiang</a><sup>3</sup>,
+              <a href="https://luccachiang.github.io/">Guangqi Jiang</a><sup>3</sup>,
             </span>
             <span class="author-block">
               <a href="https://furong-huang.com/">Furong Huang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://hxu.rocks/">Huazhe Xu</a><sup>2</sup>,
+              <a href="http://hxu.rocks/">Huazhe Xu</a><sup>2</sup>
             </span>
           </div>
 
@@ -116,7 +116,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/2407.10973"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -139,7 +139,7 @@
                 <a href="https://huggingface.co/cheryyunl/Make-An-Agent"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fa fa-database"></i>
+                      <img src="static/images/hf_icon.svg" />
                   </span>
                   <span>Models & Dataset</span>
                   </a>
@@ -167,7 +167,7 @@
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
         <strong>Make-An-Agent</strong> synthesizes policy network parameters using agents' trajectories as prompts. <br>
-        <b style="color:rgba(74, 77, 163, 0.797)">Train once, use everywhere.</b>
+        <b style="color:#C73659">Train once, use everywhere.</b>
       </h2>
       <video id="teaser" autoplay muted loop playsinline height="85%">
         <source src="./static/videos/intro.mp4"
@@ -202,6 +202,7 @@
       <div class="column is-full-width">
         <br>
         <h3 class="title is-4"><b style="color:rgba(74, 77, 163, 0.797)">Effectiveness, Versatility, Generalizability</b></h3>
+        Test trajectories are from the same RL training buffer and evaluations are under environmental randomness (4 seeds). 
         <div class="content has-text-justified">
           <p>
             <strong>Make-An-Agent</strong> can generate optimal policies for a wide variety of tasks with few-shot trajectories as conditional inputs.
@@ -213,7 +214,7 @@
 
         <div class="content has-text-justified">
           <p>
-            <strong>Make-An-Agent</strong> demonstrates strong generalizability, synthesizing well-performed policies for unseen tasks and unseen robots.
+            <strong>Make-An-Agent</strong> demonstrates strong generalizability, synthesizing well-performed policies for unfamiliar tasks and robots.
           </p>
           <div class="content has-text-justified">
           <img src="static/images/unseen.gif" />
@@ -223,12 +224,12 @@
 
         <div class="content has-text-justified">
           <p>
-            <h4 class="title is-5"><b style="color:rgba(74, 77, 163, 0.797)">Benchmark visualization</b> of <strong>Make-An-Agent</strong> </h4>
+            <h4 class="title is-5"><b style="color:rgba(74, 77, 163, 0.797)">Benchmark visualization in simulators</b></h4>
           </p>
           <div class="content has-text-justified">
             <div class="content-video" style="margin-bottom: 32px">
               <p>
-                Multi-task training on MetaWorld and Robosuite: 13 seen tasks
+                Multi-task training on MetaWorld and Robosuite: 13 tasks, cross-domain
               </p>
               <div class="content-video-container">
                 <img src="static/images/seen/door.gif" width="12%">
@@ -296,7 +297,7 @@
           <h4 class="title is-4"><b style="color:rgba(74, 77, 163, 0.797)">Policy synthesis, not memorizing</b></h4>
           <div class="content has-text-justified">
           Trajectories as conditional inputs v.s. Trajectories deployed by synthesized policies from <strong>Make-An-Agent</strong>.<br>
-          <strong>Make-An-Agent</strong> generates diverse and efficient policies.
+          <strong>Make-An-Agent</strong> generates diverse and more efficient policies.
           </div>
           <div class="content-video-container">
             <img src="static/images/traj/door-lock.gif" width="23%">
@@ -314,12 +315,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>@article{liang2024make,
+      title={Make-An-Agent: A Generalizable Policy Network Generator with Behavior-Prompted Diffusion},
+      author={Liang, Yongyuan and Xu, Tingqiang and Hu, Kaizhe and Jiang, Guangqi and Huang, Furong and Xu, Huazhe},
+      journal={arXiv preprint arXiv:2407.10973},
+      year={2024}
+      }</code></pre>
   </div>
 </section>
 
