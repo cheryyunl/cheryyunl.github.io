@@ -2,7 +2,7 @@
 
 
 a {
-  color: #ae9ec8;
+  color: #9a80c4;
   text-decoration: none;
 }
 
@@ -52,6 +52,14 @@ papertitle {
 name {
   font-family: 'Crimson Text', Georgia, serif;
   font-size: 32px;
+}
+
+.special-link {
+  color: #cba2b7 !important; 
+}
+
+.special-link:hover {
+  color: #8ba3c7 !important; 
 }
 
 .one {
