@@ -2,7 +2,7 @@
 
 
 a {
-  color: #8a8fac;
+  color: #ae9ec8;
   text-decoration: none;
 }
 
@@ -19,33 +19,33 @@ tr,
 p,
 a {
   font-family: 'Crimson Text', Georgia, serif;
-  font-size: 14px
+  font-size: 16px
 }
 
 strong {
   font-family: 'Crimson Text', Georgia, serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 classes {
   font-family: 'Crimson Text', Georgia, serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 heading {
   font-family: 'Crimson Text', Georgia, serif;
-  font-size: 22px;
+  font-size: 23px;
 }
 
 misc {
   font-family: 'Crimson Text', Georgia, serif; 
-  font-size: 18px;
+  font-size: 16px;
 }
 
 papertitle {
   font-family: 'Crimson Text', Georgia, serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600  
 }
 
