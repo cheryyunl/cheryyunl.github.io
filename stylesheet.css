@@ -55,7 +55,7 @@ name {
 }
 
 .special-link {
-  color: #be95aa !important; 
+  color: #bb8da5 !important; 
 }
 
 .special-link:hover {
@@ -89,6 +89,51 @@ body{
   padding-right:10px;
 }
 
-span.highlight {
-  background-color: #f8e6f8;
+<style>
+.filter-section {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 20px;
 }
+
+.filter-link {
+    color: #9a80c4;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-link:hover {
+    color: #8ba3c7;
+}
+
+.filter-link.active {
+    color: #9badc7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publication-row {
+    transition: opacity 0.3s ease;
+}
+
+.publication-row.hidden {
+    display: none;
+}
+
+.category-tag {
+    display: inline-block;
+    background: #889fbb;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.section-header.hidden-in-selected {
+    display: none;
+}
+
+</style>
