@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
 
 a {
@@ -109,7 +109,7 @@ body{
 }
 
 .filter-link.active {
-    color: #9badc7;
+    color: #8ba3c7;
     font-weight: 600;
     text-decoration: none;
 }
