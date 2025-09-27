@@ -27,6 +27,33 @@
 
     <link rel="icon" type="icon" href="favicon.png">
 
+    <style>
+        .publication-row.hidden {
+            display: none;
+        }
+        .filter-link {
+            cursor: pointer;
+            color: #639ed2;
+            text-decoration: none;
+        }
+        .filter-link:hover {
+            text-decoration: underline;
+        }
+        .filter-link.active {
+            font-weight: bold;
+            color: #666;
+        }
+        .category-tag-selected {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+    </style>
+
 </head>
 <body class="bg_colour">
     <table border=0 class="bg_colour" style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -187,12 +214,11 @@
 <div class="filter-section">
     <strong>By recency:</strong> 
     <span class="filter-link active" data-mode="selected"><strong>Show Selected</strong></span> / 
-    <strong>Show All by Topics:</strong>  
-    <span class="filter-link" data-topic="foundation">Foundation Model</span> / 
-    <span class="filter-link" data-topic="alignment">Alignment</span> /
+    <span class="filter-link" data-mode="all"><strong>All Papers</strong></span> / 
+    <span class="filter-link" data-topic="foundation">Large Multi-Modal Model</span> / 
+    <span class="filter-link" data-topic="alignment">LLM Alignment</span> /
     <span class="filter-link" data-topic="rl">Reinforcement Learning</span> / 
-    <span class="filter-link" data-topic="representation">Representations</span> / <br>
-    <span class="filter-link" data-topic="trustworthy">Trustworthy AI</span>.
+    <span class="filter-link" data-topic="other">Other Topics</span>
 </div>
 
 <p></p>
@@ -308,29 +334,27 @@
   </td>
 </tr>
 
-<!-- Make-An-Agent Paper -->
-<tr class="publication-row" data-category="foundation" data-selected="true">
+<!-- MCR Paper -->
+<tr class="publication-row" data-category="other" data-selected="false">
   <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
-  <img src='images/agent.gif' width="230">
+  <img src='images/mcr.gif' width="230">
   </td>
   <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
-  <div class="category-tag category-tag-selected">Generative Model</div>
   <p>
-  <a href="https://cheryyunl.github.io/make-an-agent/">
-  <papertitle>Make-An-Agent: A Generalizable Policy Network Generator with Behavior-Prompted Diffusion</papertitle>
+  <a href="https://robots-pretrain-robots.github.io/">
+  <papertitle>Robots Pre-Train Robots: Manipulation-Centric Robotic Representation from Large-Scale Robot Datasets</papertitle>
   </a>
   <br>
-  <strong>Yongyuan Liang</strong>, Tingqiang Xu, Kaizhe Hu, Guangqi Jiang, Furong Huang, Huazhe Xu
+  Guangqi Jiang*, Yifei Sun*, Tao Huang*, Huanyu Li, <strong>Yongyuan Liang</strong>&dagger;, Huazhe Xu&dagger;
   <br>				
   <br>
-  <em><strong>NeurIPS</strong></em>, 2024<br>
-  <font color=#C21232><strong>Oral Talks</strong></font> at <em>NeurIPS Workshop AFM</em>, 2024
+  <em><strong>ICLR</strong></em>, 2025
   <br>
-  <a href="https://cheryyunl.github.io/make-an-agent/" class="special-link">Project Page</a> &nbsp/&nbsp
-  <a href="https://arxiv.org/pdf/2407.10973" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="https://github.com/cheryyunl/Make-An-Agent" class="special-link">Code</a>&nbsp/&nbsp
-  <a href="https://huggingface.co/cheryyunl/Make-An-Agent" class="special-link">Models & Dataset</a>&nbsp/&nbsp
-  <a href="https://x.com/cheryyun_l/status/1813226234979184687" class="special-link">Twitter</a>
+  <a href="https://robots-pretrain-robots.github.io/" class="special-link">Project Page</a> &nbsp/&nbsp
+  <a href="https://arxiv.org/abs/2410.22325" class="special-link">Paper</a> &nbsp/&nbsp
+  <a href="https://github.com/luccachiang/robots-pretrain-robots" class="special-link">Code</a>&nbsp/&nbsp
+  <a href="https://huggingface.co/GqJiang/robots-pretrain-robots" class="special-link">Models</a>&nbsp/&nbsp
+  <a href="https://x.com/LuccaChiang/status/1851651164187635732" class="special-link">Twitter</a>
   </p>
   </td>
 </tr>
@@ -360,57 +384,33 @@
   </td>
 </tr>
 
-<!-- === REPRESENTATIONS PAPERS === -->
-<!-- MCR Paper -->
-<tr class="publication-row" data-category="representation" data-selected="false">
+<!-- Make-An-Agent Paper -->
+<tr class="publication-row" data-category="rl" data-selected="true">
   <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
-  <img src='images/mcr.gif' width="230">
+  <img src='images/agent.gif' width="230">
   </td>
   <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
+  <div class="category-tag category-tag-selected">Generative Model</div>
   <p>
-  <a href="https://robots-pretrain-robots.github.io/">
-  <papertitle>Robots Pre-Train Robots: Manipulation-Centric Robotic Representation from Large-Scale Robot Datasets</papertitle>
+  <a href="https://cheryyunl.github.io/make-an-agent/">
+  <papertitle>Make-An-Agent: A Generalizable Policy Network Generator with Behavior-Prompted Diffusion</papertitle>
   </a>
   <br>
-  Guangqi Jiang*, Yifei Sun*, Tao Huang*, Huanyu Li, <strong>Yongyuan Liang</strong>&dagger;, Huazhe Xu&dagger;
+  <strong>Yongyuan Liang</strong>, Tingqiang Xu, Kaizhe Hu, Guangqi Jiang, Furong Huang, Huazhe Xu
   <br>				
   <br>
-  <em><strong>ICLR</strong></em>, 2025
+  <em><strong>NeurIPS</strong></em>, 2024<br>
+  <font color=#C21232><strong>Oral Talks</strong></font> at <em>NeurIPS Workshop AFM</em>, 2024
   <br>
-  <a href="https://robots-pretrain-robots.github.io/" class="special-link">Project Page</a> &nbsp/&nbsp
-  <a href="https://arxiv.org/abs/2410.22325" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="https://github.com/luccachiang/robots-pretrain-robots" class="special-link">Code</a>&nbsp/&nbsp
-  <a href="https://huggingface.co/GqJiang/robots-pretrain-robots" class="special-link">Models</a>&nbsp/&nbsp
-  <a href="https://x.com/LuccaChiang/status/1851651164187635732" class="special-link">Twitter</a>
+  <a href="https://cheryyunl.github.io/make-an-agent/" class="special-link">Project Page</a> &nbsp/&nbsp
+  <a href="https://arxiv.org/pdf/2407.10973" class="special-link">Paper</a> &nbsp/&nbsp
+  <a href="https://github.com/cheryyunl/Make-An-Agent" class="special-link">Code</a>&nbsp/&nbsp
+  <a href="https://huggingface.co/cheryyunl/Make-An-Agent" class="special-link">Models & Dataset</a>&nbsp/&nbsp
+  <a href="https://x.com/cheryyun_l/status/1813226234979184687" class="special-link">Twitter</a>
   </p>
   </td>
 </tr>
 
-<!-- PREMIER-TACO Paper -->
-<tr class="publication-row" data-category="representation" data-selected="false">
-  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
-  <img src='images/premier-taco.png' width="230">
-  </td>
-  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
-  <p>
-  <a href="https://premiertaco.github.io/">
-  <papertitle>PREMIER-TACO is a Few-Shot Policy Learner: Pretraining Multitask Representation via Temporal Action-Driven Contrastive Loss</papertitle>
-  </a>
-  <br>
-  Ruijie Zheng, <strong>Yongyuan Liang</strong>, Xiyao Wang, Shuang Ma, Hal Daumé III, Huazhe Xu, John Langford, Praveen Palanisamy, Kalyan Basu, Furong Huang
-  <br>
-  <br>
-  <em><strong>ICML</strong></em>, 2024
-  <br>
-  <a href="https://premiertaco.github.io/" class="special-link">Project Page</a> &nbsp/&nbsp
-  <a href="https://arxiv.org/abs/2402.06187" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="https://github.com/FrankZheng2022/premier_taco" class="special-link">Code</a>&nbsp/&nbsp
-  <a href="https://x.com/furongh/status/1757393309637423450?s=20" class="special-link">Twitter</a>
-  </p>
-  </td>
-</tr>
-
-<!-- === REINFORCEMENT LEARNING PAPERS === -->
 <!-- ACE Paper -->
 <tr class="publication-row" data-category="rl" data-selected="true">
   <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
@@ -432,6 +432,30 @@
   <a href="https://arxiv.org/abs/2402.14528" class="special-link">Paper</a> &nbsp/&nbsp
   <a href="https://github.com/jity16/ACE-Off-Policy-Actor-Critic-with-Causality-Aware-Entropy-Regularization" class="special-link">Code</a>&nbsp/&nbsp
   <a href="https://x.com/cheryyun_l/status/1790374414187409440" class="special-link">Twitter</a>
+  </p>
+  </td>
+</tr>
+
+<!-- PREMIER-TACO Paper -->
+<tr class="publication-row" data-category="other" data-selected="false">
+  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
+  <img src='images/premier-taco.png' width="230">
+  </td>
+  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
+  <p>
+  <a href="https://premiertaco.github.io/">
+  <papertitle>PREMIER-TACO is a Few-Shot Policy Learner: Pretraining Multitask Representation via Temporal Action-Driven Contrastive Loss</papertitle>
+  </a>
+  <br>
+  Ruijie Zheng, <strong>Yongyuan Liang</strong>, Xiyao Wang, Shuang Ma, Hal Daumé III, Huazhe Xu, John Langford, Praveen Palanisamy, Kalyan Basu, Furong Huang
+  <br>
+  <br>
+  <em><strong>ICML</strong></em>, 2024
+  <br>
+  <a href="https://premiertaco.github.io/" class="special-link">Project Page</a> &nbsp/&nbsp
+  <a href="https://arxiv.org/abs/2402.06187" class="special-link">Paper</a> &nbsp/&nbsp
+  <a href="https://github.com/FrankZheng2022/premier_taco" class="special-link">Code</a>&nbsp/&nbsp
+  <a href="https://x.com/furongh/status/1757393309637423450?s=20" class="special-link">Twitter</a>
   </p>
   </td>
 </tr>
@@ -461,78 +485,8 @@
   </td>
 </tr>
 
-<!-- === TRUSTWORTHY AI PAPERS === -->
-<!-- WocaR Paper -->
-<tr class="publication-row" data-category="trustworthy" data-selected="false">
-  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
-  <img src='images/wocar.gif' width="230">
-  </td>
-  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
-  <p>
-  <a href="">
-  <papertitle>Efficient Adversarial Training without Attacking: Worst-Case-Aware Robust Reinforcement Learning</papertitle>
-  </a>
-  <br>
-  <strong>Yongyuan Liang*</strong>, Yanchao Sun*, Ruijie Zheng, Furong Huang
-  <br>
-  <br>
-  <em><strong>NeurIPS</strong></em>, 2022<br>
-   <font color=#C21232><strong>Spotlight Talks</strong></font> at <em>NeurIPS Workshop SafeRL</em>, 2021
-  <br>
-  <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/8d6b1d775014eff18256abeb207202ad-Paper-Conference.pdf" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="https://github.com/umd-huang-lab/WocaR-RL" class="special-link">Code</a>&nbsp/&nbsp
-  <a href="https://neurips.cc/media/neurips-2022/Slides/54214.pdf" class="special-link">Slides</a>
-  </p>
-  </td>
-</tr>
-
-<!-- Game Theoretic Paper -->
-<tr class="publication-row" data-category="trustworthy" data-selected="false">
-  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
-  <img src='images/grad.gif' width="230">
-  </td>
-  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
-  <p>
-  <a href="">
-  <papertitle>Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations</papertitle>
-  </a>
-  <br>
-  <strong>Yongyuan Liang</strong>, Yanchao Sun, Ruijie Zheng, Xiangyu Liu, Benjamin Eysenbach, Tuomas Sandholm, Furong Huang, Stephen Marcus McAleer
-  <br>
-  <br>
-  <em><strong>ICLR</strong></em>, 2024
-  <br>
-  <a href="https://openreview.net/pdf?id=wZWTHU7AsQ" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="https://x.com/cheryyun_l/status/1787478879764099140" class="special-link">Twitter</a>
-  </p>
-  </td>
-</tr>
-
-<!-- Backdoor Paper -->
-<tr class="publication-row" data-category="trustworthy" data-selected="false">
-  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
-  <img src='images/backdoor.png' width="230">
-  </td>
-  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
-  <p>
-  <a href="https://openreview.net/attachment?id=QTviVh3VQU&name=pdf">
-  <papertitle>Is poisoning a real threat to LLM alignment? Maybe more so than you think</papertitle>
-  </a>
-  <br>
-  Pankayaraj Pathmanathan, Souradip Chakraborty, Xiangyu Liu, <strong>Yongyuan Liang</strong>, Furong Huang
-  <br>				
-  <br>
-  <em><strong>AAAI</strong></em>, 2025<br>
-  <em>ICML Workshop on Models of Human Feedback for AI Alignment</em>, 2024
-  <br>
-  <a href="https://arxiv.org/pdf/2406.12091" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="https://github.com/pankayaraj/AAAI_2025_RLHFPoisoning" class="special-link">Code</a>
-  </p>
-  </td>
-</tr>
-
 <!-- Beyond Worst Case Paper -->
-<tr class="publication-row" data-category="trustworthy" data-selected="false">
+<tr class="publication-row" data-category="other" data-selected="false">
   <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
   <img src='images/beyond.png' width="230">
   </td>
@@ -555,8 +509,76 @@
   </td>
 </tr>
 
+<!-- Game Theoretic Paper -->
+<tr class="publication-row" data-category="other" data-selected="false">
+  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
+  <img src='images/grad.gif' width="230">
+  </td>
+  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
+  <p>
+  <a href="">
+  <papertitle>Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations</papertitle>
+  </a>
+  <br>
+  <strong>Yongyuan Liang</strong>, Yanchao Sun, Ruijie Zheng, Xiangyu Liu, Benjamin Eysenbach, Tuomas Sandholm, Furong Huang, Stephen Marcus McAleer
+  <br>
+  <br>
+  <em><strong>ICLR</strong></em>, 2024
+  <br>
+  <a href="https://openreview.net/pdf?id=wZWTHU7AsQ" class="special-link">Paper</a> &nbsp/&nbsp
+  <a href="https://x.com/cheryyun_l/status/1787478879764099140" class="special-link">Twitter</a>
+  </p>
+  </td>
+</tr>
+
+<!-- CMARL Paper -->
+<tr class="publication-row" data-category="other" data-selected="false">
+  <td class="tdimg" style="padding:20px;width:25%;vertical-align:center">
+  <img src='images/cmarl.png' width="230">
+  </td>
+  <td class="tdcontent" style="padding:20px;width:75%;vertical-align:center">
+  <p>
+  <a href="https://openreview.net/forum?id=dCOL0inGl3e">
+  <papertitle>Certifiably Robust Policy Learning against Adversarial Communication in Multi-agent Systems</papertitle>
+  </a>
+  <br>
+  Yanchao Sun, Ruijie Zheng, Parisa Hassanzadeh, <strong>Yongyuan Liang</strong>, Soheil Feizi, Sumitra Ganesh, Furong Huang
+  <br>
+  <br>
+  <em><strong>ICLR</strong></em>, 2023
+  <br>
+  <a href="https://openreview.net/pdf?id=dCOL0inGl3e" class="special-link">Paper</a> &nbsp/&nbsp
+  <a href="" class="special-link">Code</a>
+  </p>
+  </td>
+</tr>
+
+<!-- WocaR Paper -->
+<tr class="publication-row" data-category="rl" data-selected="false">
+  <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
+  <img src='images/wocar.gif' width="230">
+  </td>
+  <td class="tdcontent" style="padding:20px;width:70%;vertical-align:center">
+  <p>
+  <a href="">
+  <papertitle>Efficient Adversarial Training without Attacking: Worst-Case-Aware Robust Reinforcement Learning</papertitle>
+  </a>
+  <br>
+  <strong>Yongyuan Liang*</strong>, Yanchao Sun*, Ruijie Zheng, Furong Huang
+  <br>
+  <br>
+  <em><strong>NeurIPS</strong></em>, 2022<br>
+   <font color=#C21232><strong>Spotlight Talks</strong></font> at <em>NeurIPS Workshop SafeRL</em>, 2021
+  <br>
+  <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/8d6b1d775014eff18256abeb207202ad-Paper-Conference.pdf" class="special-link">Paper</a> &nbsp/&nbsp
+  <a href="https://github.com/umd-huang-lab/WocaR-RL" class="special-link">Code</a>&nbsp/&nbsp
+  <a href="https://neurips.cc/media/neurips-2022/Slides/54214.pdf" class="special-link">Slides</a>
+  </p>
+  </td>
+</tr>
+
 <!-- PAAD Paper -->
-<tr class="publication-row" data-category="trustworthy" data-selected="false">
+<tr class="publication-row" data-category="other" data-selected="false">
   <td class="tdimg" style="padding:20px;width:30%;vertical-align:center">
   <img src='images/paad.gif' width="230">
   </td>
@@ -575,28 +597,6 @@
   <a href="https://umd-huang-lab.github.io/evasion-rl/" class="special-link">Project Page</a>&nbsp/&nbsp
   <a href="https://openreview.net/pdf?id=JM2kFbJvvI" class="special-link">Paper</a>&nbsp/&nbsp
   <a href="https://github.com/umd-huang-lab/paad_adv_rl" class="special-link">Code</a>
-  </p>
-  </td>
-</tr>
-
-<!-- CMARL Paper -->
-<tr class="publication-row" data-category="trustworthy" data-selected="false">
-  <td class="tdimg" style="padding:20px;width:25%;vertical-align:center">
-  <img src='images/cmarl.png' width="230">
-  </td>
-  <td class="tdcontent" style="padding:20px;width:75%;vertical-align:center">
-  <p>
-  <a href="https://openreview.net/forum?id=dCOL0inGl3e">
-  <papertitle>Certifiably Robust Policy Learning against Adversarial Communication in Multi-agent Systems</papertitle>
-  </a>
-  <br>
-  Yanchao Sun, Ruijie Zheng, Parisa Hassanzadeh, <strong>Yongyuan Liang</strong>, Soheil Feizi, Sumitra Ganesh, Furong Huang
-  <br>
-  <br>
-  <em><strong>ICLR</strong></em>, 2023
-  <br>
-  <a href="https://openreview.net/pdf?id=dCOL0inGl3e" class="special-link">Paper</a> &nbsp/&nbsp
-  <a href="" class="special-link">Code</a>
   </p>
   </td>
 </tr>
@@ -623,6 +623,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (mode === 'selected') {
                 showSelectedMode();
+            } else if (mode === 'all') {
+                showAllMode();
             } else if (topic) {
                 showTopicMode(topic);
             }
@@ -639,6 +641,18 @@ document.addEventListener('DOMContentLoaded', function() {
         publicationRows.forEach(row => {
             const isSelected = row.getAttribute('data-selected') === 'true';
             row.classList.toggle('hidden', !isSelected);
+        });
+    }
+    
+    function showAllMode() {
+        // hide category tags
+        categoryTags.forEach(tag => {
+            tag.style.display = 'none';
+        });
+        
+        // show all papers (按时间顺序，即当前的排列顺序)
+        publicationRows.forEach(row => {
+            row.classList.remove('hidden');
         });
     }
     
